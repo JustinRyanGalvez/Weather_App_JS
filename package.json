@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart" : "nodemon server.js"
+    "devStart": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/JustinRyanGalvez/Weather_App_JS#readme",
   "dependencies": {
-    "axios": "^0.27.2",
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "nodemon": "^2.0.18"
   }

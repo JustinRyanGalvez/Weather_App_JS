@@ -6,7 +6,7 @@ searchBox.addListener('places_changed', () => {
     const latitude =  place.geometry.location.lat()
     const longitude = place.geometry.location.lng()
     fetch('/weather', {
-        method: 'post',
+        method: 'POST',
         headers: {
             'Content-type': 'application/json',
             'Accept': 'application/json'
