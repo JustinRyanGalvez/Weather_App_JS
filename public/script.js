@@ -17,22 +17,23 @@ searchBox.addListener('places_changed', () => {
         })
     }).then(res => res.json()).then(data => {
         console.log(data)
-        setWeatherData(data, place.formatted_addresses)
+        setWeatherData(data, place.formatted_address)
     })
 })
 
-const locationElement = document.querySelector(['data-location'])
-const statusElement = document.querySelector(['data-status'])
-const temperatureElement = document.querySelector(['data-temperature'])
-const humidityElement = document.querySelector(['data-humidity'])
-const windElement = document.querySelector(['data-wind'])
+const statusElement = document.querySelector('[data-status]')
+const locationElement = document.querySelector('[data-location]')
+const windElement = document.querySelector('[data-wind]')
+const temperatureElement = document.querySelector('[data-temperature]')
+const humidityElement = document.querySelector('[data-humidity]')
 
 
 // Fix here and populate host
 function setWeatherData(data, place) {
-    locationElement.textContent = place
-    statusElement.textContent = data.description
-    temperatureElement.textContent = temp
-    humidityElement = humidity
-    windElement = wind
+    statusElement.textContent = place
+    locationElement.textContent = data[0].description
+    // Fix these v
+    // windElement = weather.wind
+    // humidityElement = weather.humidity
+    // temperatureElement.textContent = weather.temperature
 }
