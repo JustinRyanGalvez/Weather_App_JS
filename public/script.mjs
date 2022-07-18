@@ -5,6 +5,7 @@ searchBox.addListener('places_changed', () => {
     if (place == null) return
     const latitude =  place.geometry.location.lat()
     const longitude = place.geometry.location.lng()
+    //Place and description call
     fetch('/weather', {
         method: 'POST',
         headers: {
@@ -36,6 +37,7 @@ searchBox.addListener('places_changed', () => {
     // })
 })
 
+//Wind speed call
 searchBox.addListener('places_changed', () => {
     const place = searchBox.getPlaces()[0]
     if (place == null) return
@@ -57,6 +59,7 @@ searchBox.addListener('places_changed', () => {
     })
 })
 
+// Temp and humidity call
 searchBox.addListener('places_changed', () => {
     const place = searchBox.getPlaces()[0]
     if (place == null) return
@@ -83,12 +86,17 @@ const locationElement = document.querySelector('[data-location]')
 const windElement = document.querySelector('[data-wind]')
 const temperatureElement = document.querySelector('[data-temperature]')
 const humidityElement = document.querySelector('[data-humidity]')
+const weatherIcon = document.querySelector(".icon")
+
 
 
 // Fix here and populate host
 function setWeatherData1(data, place) {
     statusElement.textContent = place
     locationElement.textContent = data[0].main
+    var icon = data[0].icon
+    var iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`
+    weatherIcon.src = iconURL
 }
 
 function setWeatherData2(data){
