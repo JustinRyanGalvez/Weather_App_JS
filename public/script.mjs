@@ -109,4 +109,3 @@ function setWeatherData3(data){
     temperatureElement.textContent = data.temp
     humidityElement.textContent = data.humidity
 }
-
