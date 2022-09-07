@@ -90,7 +90,6 @@ const weatherIcon = document.querySelector(".icon")
 
 
 
-// Fix here and populate host
 function setWeatherData1(data, place) {
     statusElement.textContent = place
     locationElement.textContent = data[0].main
